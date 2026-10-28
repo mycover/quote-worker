@@ -1,0 +1,7 @@
+{
+  "name": "quote",
+  "main": "src/worker.js",
+  "workers_dev": true,
+  "preview_urls": false,
+  "compatibility_date": "2024-09-23"
+}
