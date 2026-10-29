@@ -1,7 +1,20 @@
 {
-  "name": "quote",
-  "main": "src/worker.js",
-  "workers_dev": true,
-  "preview_urls": false,
-  "compatibility_date": "2024-09-23"
+	"name": "quote",
+	"main": "src/worker.js",
+	"workers_dev": true,
+	"preview_urls": false,
+	"compatibility_date": "2024-09-23",
+	"kv_namespaces": [
+		{
+			// Brak "id" → przy pierwszym deployu wrangler automatycznie utworzy
+			// namespace (nazwa wywiedzie się z workera i bindingu) i przypnie go
+			// jako QUOTE_CACHE. Dzięki temu w repo nie ma żadnych ID konta.
+			// Uwaga: lokalny `wrangler deploy` może dopisać ID do tego pliku —
+			// w takim wypadku przywróć go: `git checkout -- wrangler.jsonc`.
+			"binding": "QUOTE_CACHE"
+		}
+	],
+	"triggers": {
+		"crons": ["0 * * * *"]
+	}
 }
