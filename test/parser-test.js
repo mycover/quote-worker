@@ -1,4 +1,4 @@
-// Szybki test parsera: symulacja działania fetchQuotes na pobranym HTML
+// Quick parser test: simulates fetchQuotes on a saved HTML page
 const html = require("fs").readFileSync(process.argv[2] || "quotes.html", "utf8");
 
 function parse(html) {

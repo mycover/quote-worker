@@ -6,11 +6,11 @@
 	"compatibility_date": "2024-09-23",
 	"kv_namespaces": [
 		{
-			// Brak "id" → przy pierwszym deployu wrangler automatycznie utworzy
-			// namespace (nazwa wywiedzie się z workera i bindingu) i przypnie go
-			// jako QUOTE_CACHE. Dzięki temu w repo nie ma żadnych ID konta.
-			// Uwaga: lokalny `wrangler deploy` może dopisać ID do tego pliku —
-			// w takim wypadku przywróć go: `git checkout -- wrangler.jsonc`.
+			// No "id": on the first deploy Wrangler automatically provisions a
+			// namespace (name derived from the worker and binding) and attaches it
+			// as QUOTE_CACHE. This keeps account IDs out of the repository.
+			// Note: a local `wrangler deploy` may write the provisioned id back
+			// into this file — if so, restore it: `git checkout -- wrangler.jsonc`.
 			"binding": "QUOTE_CACHE"
 		}
 	],
